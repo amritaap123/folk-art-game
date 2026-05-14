@@ -1,0 +1,301 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Scratch and Learn the Art
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     HOME SCREEN
+========================= -->
+
+<div id="homeScreen">
+
+    <!-- SLIDESHOW -->
+
+    <div class="slideshow">
+
+        <div class="slide fade">
+            <img src="assets/warli.png">
+        </div>
+
+        <div class="slide fade">
+            <img src="assets/gond.png">
+        </div>
+
+        <div class="slide fade">
+            <img src="assets/madhubani.png">
+        </div>
+
+        <div class="slide fade">
+            <img src="assets/kalamkari.png">
+        </div>
+
+        <div class="slide fade">
+            <img src="assets/pattachitra.png">
+        </div>
+
+    </div>
+
+    <!-- OVERLAY -->
+
+    <div class="overlay"></div>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+        <h1>
+            Welcome to the World of Folk Arts in India
+        </h1>
+
+        <p>
+            Scratch, discover and explore beautiful traditional art forms.
+        </p>
+
+        <button id="startBtn">
+            Start the Game
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     SCRATCH SCREEN
+========================= -->
+
+<div id="scratchScreen">
+
+    <!-- INTRO -->
+
+    <div id="introMessage">
+
+        <h2>
+            Get Ready to Discover!
+        </h2>
+
+    </div>
+
+    <!-- GAME AREA -->
+
+    <div id="gameArea">
+
+        <h2>
+            Scratch to reveal the hidden art
+        </h2>
+
+        <div class="scratchContainer">
+
+            <!-- DYNAMIC SCRATCH IMAGE -->
+
+            <img
+                id="hiddenImage"
+                src=""
+                alt="Hidden Art"
+            >
+
+            <!-- SCRATCH CANVAS -->
+
+            <canvas id="scratchCanvas"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     MATCH SCREEN
+========================= -->
+
+<div id="matchScreen">
+
+    <h2>
+        Can you identify the art form?
+    </h2>
+
+    <p id="chanceText">
+        Chances Left: 5
+    </p>
+
+    <!-- DYNAMIC REVEALED IMAGE -->
+
+    <div class="revealedArtContainer">
+
+        <img
+            id="revealedArtImage"
+            src=""
+            alt="Revealed Art"
+        >
+
+    </div>
+
+    <!-- OPTIONS -->
+
+    <div class="optionsGrid">
+
+        <div class="optionBox" data-match="warli">
+
+            <img src="assets/warli.png">
+
+            <p>Warli Art</p>
+
+        </div>
+
+        <div class="optionBox" data-match="gond">
+
+            <img src="assets/gond.png">
+
+            <p>Gond Art</p>
+
+        </div>
+
+        <div class="optionBox" data-match="madhubani">
+
+            <img src="assets/madhubani.png">
+
+            <p>Madhubani Art</p>
+
+        </div>
+
+        <div class="optionBox" data-match="kalamkari">
+
+            <img src="assets/kalamkari.png">
+
+            <p>Kalamkari Art</p>
+
+        </div>
+
+        <div class="optionBox" data-match="pattachitra">
+
+            <img src="assets/pattachitra.png">
+
+            <p>Pattachitra Art</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     INFO SCREEN
+========================= -->
+
+<div id="infoScreen">
+
+    <div class="infoCard">
+
+        <!-- DYNAMIC TITLE -->
+
+        <h2 id="infoTitle">
+        </h2>
+
+        <!-- DYNAMIC DESCRIPTION -->
+
+        <p id="infoDescription">
+        </p>
+
+        <!-- OPTIONS -->
+
+        <div class="infoButtons">
+
+            <!-- LEARN -->
+
+            <button id="learnBtn">
+                Learn the Art
+            </button>
+
+            <!-- BUY -->
+
+            <button id="buyBtn">
+                Buy the Art
+            </button>
+
+            <!-- COLOR -->
+
+             <button id="colorBtn">
+    Color Your Own Art
+</button>
+
+<button id="feedbackBtn">
+    Give Feedback
+</button>
+
+<button id="homeBtn">
+    Home Page
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     COLOR SCREEN
+========================= -->
+
+<div id="colorScreen">
+
+    <h2>
+        Color Your Own Folk Art
+    </h2>
+
+    <!-- DYNAMIC COLOR IMAGE -->
+
+    <div class="colorContainer">
+
+        <img
+            id="colorImage"
+            src=""
+            alt="Color Art"
+        >
+
+    </div>
+
+    <!-- COLOR BUTTONS -->
+
+    <div class="colorButtons">
+
+        <button id="printBtn">
+            Print Art
+        </button>
+
+        <button id="backInfoBtn">
+            Back
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     AUDIO
+========================= -->
+
+<audio
+    id="clapSound"
+    src="assets/clapSound.mp3">
+</audio>
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
