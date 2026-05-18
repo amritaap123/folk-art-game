@@ -192,53 +192,43 @@
 
 </div>
 
-<!-- =========================
-     INFO SCREEN
-========================= -->
-
 <div id="infoScreen">
 
     <div class="infoCard">
 
         <!-- DYNAMIC TITLE -->
 
-        <h2 id="infoTitle">
-        </h2>
+        <h2 id="infoTitle"></h2>
 
         <!-- DYNAMIC DESCRIPTION -->
 
-        <p id="infoDescription">
-        </p>
+        <p id="infoDescription"></p>
 
-        <!-- OPTIONS -->
+        <!-- BUTTONS -->
 
         <div class="infoButtons">
-
-            <!-- LEARN -->
 
             <button id="learnBtn">
                 Learn the Art
             </button>
 
-            <!-- BUY -->
-
             <button id="buyBtn">
                 Buy the Art
             </button>
 
-            <!-- COLOR -->
+            <button id="colorBtn">
+                Color Your Own Art
+            </button>
 
-             <button id="colorBtn">
-    Color Your Own Art
+            <button id="feedbackBtn">
+                Give Feedback
+            </button>
+<button id="gblBtn">
+     Begin the Cultural Learning Challenge
 </button>
-
-<button id="feedbackBtn">
-    Give Feedback
-</button>
-
-<button id="homeBtn">
-    Home Page
-</button>
+            <button id="homeBtn">
+                Home Page
+            </button>
 
         </div>
 
@@ -280,6 +270,235 @@
             Back
         </button>
 
+        
+
+    </div>
+
+</div>
+
+<!-- =========================
+     GAME BASED LEARNING SCREEN
+========================= -->
+
+<div id="gblScreen">
+
+    <div class="gblContainer">
+
+        <h1>
+            Are You Ready for Game-Based Learning?
+        </h1>
+
+        <p>
+            You explored the artwork. Now begin the cultural quest.
+        </p>
+
+        <button id="startGBLBtn">
+
+                Start the Cultural Learning Challenge
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     MEET ARTIST SCREEN
+========================= -->
+
+<div id="artistScreen">
+
+    <div class="artistContainer">
+
+        <!-- ARTIST IMAGE -->
+
+        <div class="artistImageSection">
+
+            <img
+                id="artistImage"
+                src="assets/gond-artist.png"
+                alt="Artist"
+            >
+
+        </div>
+
+        <!-- DIALOGUE SECTION -->
+
+        <div class="dialogueSection">
+
+            <div id="artistDialogue">
+
+               Greetings traveler! Every painting carries a story.
+Can you answer my questions and continue the cultural journey?
+            </div> 
+
+            <!-- QUESTION -->
+
+            <h3 id="questionText"></h3>
+
+            <!-- OPTIONS -->
+
+            <div id="answerOptions"></div>
+
+            <!-- FEEDBACK -->
+
+            <p id="feedbackMessage"></p>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================
+     LEVEL 3 SCREEN
+========================= -->
+
+<div id="level3Screen">
+
+    <div class="level3Container">
+
+        <h1>
+            Level 3: Cultural Recall Challenge
+        </h1>
+
+        <p>
+            Scratch the artwork and type the correct name of the folk art form.
+        </p>
+
+        <!-- SCRATCH AREA -->
+
+        <div class="scratchContainer">
+
+            <img
+                id="level3HiddenImage"
+                src=""
+                alt="Hidden Art"
+            >
+
+            <canvas id="level3Canvas"></canvas>
+
+        </div>
+
+        <!-- INPUT SECTION -->
+
+        <div id="typingSection">
+            <p id="artClue"></p>
+
+            <input
+                type="text"
+                id="artInput"
+                placeholder="Type the art form name"
+            >
+
+            <button id="submitArtAnswer">
+
+                Submit Answer
+
+            </button>
+            <button id="level3HomeBtn">
+
+    Return Home
+
+</button>
+
+        </div>
+
+        <!-- FEEDBACK -->
+
+        <p id="typingFeedback"></p>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     REFLECTION SCREEN
+========================= -->
+
+<div id="reflectionScreen">
+
+    <div class="reflectionContainer">
+
+        <h1>
+            Level 5: Cultural Reflection Challenge
+        </h1>
+
+        <p id="reflectionScenario">
+
+            You meet a traditional folk artist selling handmade paintings
+            at a village exhibition.
+
+            The artist explains that preserving folk art traditions is becoming difficult.
+
+            What would you do?
+        </p>
+
+        <div class="reflectionOptions">
+
+            <button class="reflectionBtn goodChoice">
+
+                Buy a painting and learn more about the art form.
+
+            </button>
+
+            <button class="reflectionBtn goodChoice">
+
+                Share the artist’s work to help more people discover it.
+
+            </button>
+
+            <button class="reflectionBtn rethinkChoice">
+
+                Take photographs and leave without interacting.
+
+            </button>
+
+            <button class="reflectionBtn rethinkChoice">
+
+                Ignore the artist and continue walking.
+
+            </button>
+
+        </div>
+
+        <p id="reflectionFeedback"></p>
+
+    </div>
+
+</div>
+<!-- =========================
+     BADGE SCREEN
+========================= -->
+
+<div id="badgeScreen">
+
+    <div class="badgeContainer">
+
+        <h1>
+            Congratulations!
+        </h1>
+
+        <div class="badgeCard">
+
+            <h2>
+                CULTURAL HERITAGE AMBASSADOR
+            </h2>
+
+            <p>
+
+                You completed the Cultural Learning Journey
+                and demonstrated care for India’s folk-art traditions.
+
+            </p>
+
+        </div>
+
+        <button id="futureGamesBtn">
+
+            More Folk-Art Adventures Coming Soon
+
+        </button>
+
     </div>
 
 </div>
@@ -299,3 +518,4 @@
 
 </body>
 </html>
+

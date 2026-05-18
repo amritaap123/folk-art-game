@@ -1,4 +1,7 @@
- /* =========================
+ 
+
+
+/* =========================
    SLIDESHOW
 ========================= */
 
@@ -56,6 +59,12 @@ const infoScreen =
 const colorScreen =
     document.getElementById("colorScreen");
 
+const gblScreen =
+    document.getElementById("gblScreen");
+
+const artistScreen =
+    document.getElementById("artistScreen");
+
 const clapSound =
     document.getElementById("clapSound");
 
@@ -105,6 +114,31 @@ const backInfoBtn =
 const printBtn =
     document.getElementById("printBtn");
 
+const gblBtn =
+    document.getElementById("gblBtn");
+
+const startGBLBtn =
+    document.getElementById("startGBLBtn");
+
+/* =========================
+   ARTIST QUIZ ELEMENTS
+========================= */
+
+const questionText =
+    document.getElementById("questionText");
+
+const answerOptions =
+    document.getElementById("answerOptions");
+
+const feedbackMessage =
+    document.getElementById("feedbackMessage");
+
+const artistDialogue =
+    document.getElementById("artistDialogue");
+
+const artistImage =
+    document.getElementById("artistImage");
+
 /* =========================
    ART DATABASE
 ========================= */
@@ -119,6 +153,8 @@ const arts = [
     image: "assets/gond.png",
 
     outline: "assets/gondoutline.png",
+
+    artist: "assets/gond-artist.png",
 
     info:
     "Gond art is a traditional tribal art form from central India known for detailed patterns, dots, vibrant colours, and storytelling.",
@@ -139,6 +175,8 @@ const arts = [
 
     outline: "assets/warlioutline.png",
 
+    artist: "assets/warli-artist.png",
+
     info:
     "Warli art is a tribal art tradition from Maharashtra using geometric forms to depict daily life and nature.",
 
@@ -157,6 +195,8 @@ const arts = [
     image: "assets/madhubani.png",
 
     outline: "assets/madhubanioutline.png",
+
+    artist: "assets/madhubani-artist.png",
 
     info:
     "Madhubani art from Bihar is known for symbolic patterns, vibrant colours, and intricate detailing.",
@@ -177,6 +217,8 @@ const arts = [
 
     outline: "assets/kalamkarioutline.png",
 
+    artist: "assets/kalamkari-artist.png",
+
     info:
     "Kalamkari is a traditional hand-painted textile art from Andhra Pradesh and Telangana.",
 
@@ -195,6 +237,8 @@ const arts = [
     image: "assets/pattachitra.png",
 
     outline: "assets/pattachitraoutline.png",
+
+    artist: "assets/pattachitra-artist.png",
 
     info:
     "Pattachitra is a traditional scroll painting art from Odisha famous for mythological storytelling.",
@@ -235,6 +279,9 @@ function loadCurrentArt(){
 
     colorImage.src =
         currentArt.outline;
+
+    artistImage.src =
+        currentArt.artist;
 }
 
 /* =========================
@@ -492,7 +539,7 @@ const optionBoxes =
 const chanceText =
     document.getElementById("chanceText");
 
-let chancesLeft = 5;
+let chancesLeft = 2;
 
 optionBoxes.forEach((box) => {
 
@@ -500,8 +547,6 @@ optionBoxes.forEach((box) => {
 
         const selectedArt =
             box.dataset.match;
-
-        /* CORRECT */
 
         if(selectedArt === currentArt.id){
 
@@ -562,7 +607,7 @@ optionBoxes.forEach((box) => {
 });
 
 /* =========================
-   LEARN BUTTON
+   INFO BUTTONS
 ========================= */
 
 learnBtn.onclick = function(){
@@ -573,10 +618,6 @@ learnBtn.onclick = function(){
     );
 };
 
-/* =========================
-   BUY BUTTON
-========================= */
-
 buyBtn.onclick = function(){
 
     window.open(
@@ -584,10 +625,6 @@ buyBtn.onclick = function(){
         "_blank"
     );
 };
-
-/* =========================
-   COLOR BUTTON
-========================= */
 
 colorBtn.onclick = function(){
 
@@ -598,10 +635,6 @@ colorBtn.onclick = function(){
         "flex";
 };
 
-/* =========================
-   FEEDBACK BUTTON
-========================= */
-
 feedbackBtn.onclick = function(){
 
     window.open(
@@ -609,10 +642,6 @@ feedbackBtn.onclick = function(){
         "_blank"
     );
 };
-
-/* =========================
-   BACK BUTTON
-========================= */
 
 backInfoBtn.onclick = function(){
 
@@ -622,10 +651,6 @@ backInfoBtn.onclick = function(){
     infoScreen.style.display =
         "flex";
 };
-
-/* =========================
-   HOME BUTTON
-========================= */
 
 homeBtn.onclick = function(){
 
@@ -651,35 +676,11 @@ printBtn.onclick = function(){
                 Print Folk Art
             </title>
 
-            <style>
-
-                body{
-
-                    display:flex;
-
-                    justify-content:center;
-
-                    align-items:center;
-
-                    height:100vh;
-
-                    margin:0;
-                }
-
-                img{
-
-                    width:80%;
-
-                    max-width:700px;
-                }
-
-            </style>
-
         </head>
 
-        <body>
+        <body style="display:flex;justify-content:center;align-items:center;height:100vh;">
 
-            <img src="${colorImage.src}">
+            <img src="${colorImage.src}" style="width:80%;max-width:700px;">
 
         </body>
 
@@ -691,3 +692,774 @@ printBtn.onclick = function(){
 
     printWindow.print();
 };
+
+/* =========================
+   ARTIST QUESTION DATABASE
+========================= */
+
+const artistQuestionDatabase = {
+
+    gond: [
+
+        {
+            question:
+                "Where did Gond art originate?",
+
+            options: [
+                "Kerala",
+                "Madhya Pradesh",
+                "Assam",
+                "Rajasthan"
+            ],
+
+            answer:
+                "Madhya Pradesh"
+        },
+
+        {
+            question:
+                "What is the capital of Madhya Pradesh?",
+
+            options: [
+                "Bhopal",
+                "Patna",
+                "Lucknow",
+                "Jaipur"
+            ],
+
+            answer:
+                "Bhopal"
+        }
+
+    ],
+
+    warli: [
+
+        {
+            question:
+                "Warli art belongs to which state?",
+
+            options: [
+                "Maharashtra",
+                "Kerala",
+                "Punjab",
+                "Odisha"
+            ],
+
+            answer:
+                "Maharashtra"
+        },
+
+        {
+            question:
+                "What is the capital of Maharashtra?",
+
+            options: [
+                "Mumbai",
+                "Nagpur",
+                "Bhopal",
+                "Chennai"
+            ],
+
+            answer:
+                "Mumbai"
+        }
+
+    ],
+
+    madhubani: [
+
+        {
+            question:
+                "Madhubani art originated in which state?",
+
+            options: [
+                "Bihar",
+                "Assam",
+                "Kerala",
+                "Rajasthan"
+            ],
+
+            answer:
+                "Bihar"
+        },
+
+        {
+            question:
+                "What is the capital of Bihar?",
+
+            options: [
+                "Patna",
+                "Lucknow",
+                "Dispur",
+                "Jaipur"
+            ],
+
+            answer:
+                "Patna"
+        }
+
+    ],
+
+    kalamkari: [
+
+        {
+            question:
+                "Kalamkari art belongs to which Indian states?",
+
+            options: [
+                "Andhra Pradesh and Telangana",
+                "Kerala and Tamil Nadu",
+                "Punjab and Haryana",
+                "Bihar and Odisha"
+            ],
+
+            answer:
+                "Andhra Pradesh and Telangana"
+        },
+
+        {
+            question:
+                "What is the capital of Andhra Pradesh?",
+
+            options: [
+                "Amaravati",
+                "Hyderabad",
+                "Bhopal",
+                "Jaipur"
+            ],
+
+            answer:
+                "Amaravati"
+        }
+
+    ],
+
+    pattachitra: [
+
+        {
+            question:
+                "Pattachitra art originated in which state?",
+
+            options: [
+                "Odisha",
+                "Maharashtra",
+                "Kerala",
+                "Punjab"
+            ],
+
+            answer:
+                "Odisha"
+        },
+
+        {
+            question:
+                "What is the capital of Odisha?",
+
+            options: [
+                "Bhubaneswar",
+                "Patna",
+                "Lucknow",
+                "Chennai"
+            ],
+
+            answer:
+                "Bhubaneswar"
+        }
+
+    ]
+
+};
+
+/* =========================
+   QUIZ SYSTEM
+========================= */
+
+let currentQuestion = 0;
+
+function getCurrentQuestions(){
+
+    return artistQuestionDatabase[
+        currentArt.id
+    ];
+}
+
+function loadQuestion(){
+
+    answerOptions.innerHTML = "";
+
+    const questions =
+        getCurrentQuestions();
+
+    const currentData =
+        questions[currentQuestion];
+
+    questionText.innerText =
+        currentData.question;
+
+    currentData.options.forEach(option => {
+
+        const button =
+            document.createElement("button");
+
+        button.innerText = option;
+
+        button.classList.add("answerBtn");
+
+        button.addEventListener("click", () => {
+
+            checkAnswer(option);
+
+        });
+
+        answerOptions.appendChild(button);
+
+    });
+}
+
+function checkAnswer(selectedAnswer){
+
+    const questions =
+        getCurrentQuestions();
+
+    const currentData =
+        questions[currentQuestion];
+
+    if(selectedAnswer === currentData.answer){
+
+        feedbackMessage.innerText =
+            "Wonderful! Correct answer.";
+
+        feedbackMessage.style.color =
+            "green";
+
+        currentQuestion++;
+
+        setTimeout(() => {
+
+            feedbackMessage.innerText = "";
+
+            if(currentQuestion < questions.length){
+
+                loadQuestion();
+
+            }else{
+
+                showRewardScreen();
+
+            }
+
+        }, 1200);
+
+    }else{
+
+        feedbackMessage.innerText =
+            "Not quite. Try again!";
+
+        feedbackMessage.style.color =
+            "red";
+    }
+}
+/* =========================
+   REWARD SCREEN
+========================= */
+
+function showRewardScreen(){
+
+    artistDialogue.innerText =
+        "You completed the cultural challenge successfully!";
+
+    questionText.innerText =
+        "You received a traditional painting!";
+
+    answerOptions.innerHTML = `
+
+        <img
+            src="${currentArt.image}"
+            style="
+                width:300px;
+                border-radius:20px;
+                margin-top:20px;
+            "
+        >
+
+        <div style="margin-top:20px;">
+
+            <button
+                id="nextLevelBtn"
+                class="answerBtn"
+            >
+
+                Continue to Level 3
+
+            </button>
+
+        </div>
+
+    `;
+
+    // BUTTON EVENT
+
+    setTimeout(() => {
+
+        const nextLevelBtn =
+            document.getElementById("nextLevelBtn");
+
+        nextLevelBtn.onclick = function(){
+
+            artistScreen.style.display =
+                "none";
+
+            level3Screen.style.display =
+                "block";
+
+            startLevel3();
+
+        };
+
+    }, 100);
+
+}
+ 
+           
+/* =========================
+   LEVEL 3 SYSTEM
+========================= */
+
+const level3Screen =
+    document.getElementById("level3Screen");
+
+const level3HiddenImage =
+    document.getElementById("level3HiddenImage");
+
+const level3Canvas =
+    document.getElementById("level3Canvas");
+
+const level3Ctx =
+    level3Canvas.getContext("2d");
+
+const submitArtAnswer =
+    document.getElementById("submitArtAnswer");
+
+const artInput =
+    document.getElementById("artInput");
+
+const typingFeedback =
+    document.getElementById("typingFeedback");
+
+const level3HomeBtn =
+    document.getElementById("level3HomeBtn");
+
+const artClue =
+    document.getElementById("artClue");
+const reflectionScreen =
+    document.getElementById(
+        "reflectionScreen"
+    );
+
+const reflectionFeedback =
+    document.getElementById(
+        "reflectionFeedback"
+    );
+
+const badgeScreen =
+    document.getElementById(
+        "badgeScreen"
+    );
+
+const futureGamesBtn =
+    document.getElementById(
+        "futureGamesBtn"
+    );
+let level3Art;
+
+/* =========================
+   CREATE CLUE
+========================= */
+
+function generateClue(word){
+
+    let clue = "";
+
+    for(let i = 0; i < word.length; i++){
+
+        if(i % 2 === 0){
+
+            clue += word[i].toUpperCase();
+
+        }else{
+
+            clue += "_";
+        }
+
+        clue += " ";
+    }
+
+    return clue;
+}
+
+/* =========================
+   OPEN LEVEL 3
+========================= */
+
+
+
+/* =========================
+   START LEVEL 3
+========================= */
+
+
+
+    function startLevel3(){
+
+    level3Art =
+        arts[Math.floor(Math.random() * arts.length)];
+
+    level3HiddenImage.src =
+        level3Art.image;
+
+    artClue.innerText =
+        generateClue(level3Art.id);
+
+    level3Canvas.width = 400;
+
+    level3Canvas.height = 400;
+
+    level3Ctx.globalCompositeOperation =
+        "source-over";
+
+    level3Ctx.clearRect(
+        0,
+        0,
+        level3Canvas.width,
+        level3Canvas.height
+    );
+
+    level3Ctx.fillStyle =
+        "#7b2cbf";
+
+    level3Ctx.fillRect(
+    0,
+    0,
+    level3Canvas.width,
+    level3Canvas.height
+);
+
+// ENABLE INPUT AREA
+
+document.getElementById(
+    "typingSection"
+).style.pointerEvents = "auto";
+
+}
+
+/* =========================
+   LEVEL 3 SCRATCH SYSTEM
+========================= */
+
+let level3Scratching = false;
+
+// MOUSE EVENTS
+
+level3Canvas.addEventListener(
+    "mousedown",
+    startLevel3Scratch
+);
+
+level3Canvas.addEventListener(
+    "mouseup",
+    stopLevel3Scratch
+);
+
+level3Canvas.addEventListener(
+    "mouseleave",
+    stopLevel3Scratch
+);
+
+level3Canvas.addEventListener(
+    "mousemove",
+    scratchLevel3
+);
+
+// TOUCH EVENTS
+
+level3Canvas.addEventListener(
+    "touchstart",
+    startLevel3Scratch,
+    { passive:false }
+);
+
+level3Canvas.addEventListener(
+    "touchend",
+    stopLevel3Scratch
+);
+
+level3Canvas.addEventListener(
+    "touchmove",
+    scratchLevel3Touch,
+    { passive:false }
+);
+
+/* =========================
+   START / STOP SCRATCH
+========================= */
+
+function startLevel3Scratch(){
+
+    level3Scratching = true;
+}
+
+function stopLevel3Scratch(){
+
+    level3Scratching = false;
+}
+
+/* =========================
+   SCRATCH FUNCTIONS
+========================= */
+
+function scratchLevel3(e){
+
+    if(!level3Scratching) return;
+
+    const rect =
+        level3Canvas.getBoundingClientRect();
+
+    const x =
+        e.clientX - rect.left;
+
+    const y =
+        e.clientY - rect.top;
+
+    eraseLevel3(x, y);
+}
+
+function scratchLevel3Touch(e){
+
+    e.preventDefault();
+
+    if(!level3Scratching) return;
+
+    const rect =
+        level3Canvas.getBoundingClientRect();
+
+    const touch =
+        e.touches[0];
+
+    const x =
+        touch.clientX - rect.left;
+
+    const y =
+        touch.clientY - rect.top;
+
+    eraseLevel3(x, y);
+}
+
+/* =========================
+   ERASE LEVEL 3
+========================= */
+
+function eraseLevel3(x, y){
+
+    level3Ctx.globalCompositeOperation =
+        "destination-out";
+
+    level3Ctx.beginPath();
+
+    level3Ctx.arc(
+        x,
+        y,
+        35,
+        0,
+        Math.PI * 2
+    );
+
+    level3Ctx.fill();
+
+    level3Ctx.closePath();
+}
+
+/* =========================
+   CHECK LEVEL 3 ANSWER
+========================= */
+
+submitArtAnswer.onclick = function(){
+
+    console.log("SUBMIT CLICKED");
+    const learnerAnswer =
+        artInput.value
+            .toLowerCase()
+            .trim();
+
+    const correctAnswer =
+        level3Art.id
+            .toLowerCase();
+
+     if(true) {
+
+        typingFeedback.innerHTML = `
+
+            <p style="color:green;">
+
+                Excellent cultural observation!
+
+            </p>
+
+            <button id="continueReflectionBtn">
+
+                Continue to Cultural Reflection
+
+            </button>
+
+        `;
+// CONTINUE TO REFLECTION
+
+setTimeout(() => {
+
+    const continueBtn =
+        document.getElementById(
+            "continueReflectionBtn"
+        );
+
+    continueBtn.onclick = function(){
+
+        level3Screen.style.display =
+            "none";
+
+        reflectionScreen.style.display =
+            "block";
+    };
+
+}, 100);
+    }else{
+
+        typingFeedback.innerHTML = `
+
+            <p style="color:red;">
+
+                Not quite. Observe carefully and try again.
+
+            </p>
+
+        `;
+    }
+
+};
+
+ 
+
+        
+
+/* =========================
+   LEVEL 3 HOME BUTTON
+========================= */
+
+level3HomeBtn.onclick = function(){
+
+    location.reload();
+};
+
+/* =========================
+   GBL FLOW
+========================= */
+
+gblBtn.onclick = function(){
+
+    infoScreen.style.display =
+        "none";
+
+    gblScreen.style.display =
+        "flex";
+};
+
+startGBLBtn.onclick = function(){
+
+    gblScreen.style.display =
+        "none";
+
+    artistScreen.style.display =
+        "block";
+
+    currentQuestion = 0;
+
+    loadQuestion();
+};
+/* =========================
+   REFLECTION SYSTEM
+========================= */
+
+const goodChoices =
+    document.querySelectorAll(
+        ".goodChoice"
+    );
+
+const rethinkChoices =
+    document.querySelectorAll(
+        ".rethinkChoice"
+    );
+
+/* GOOD CHOICES */
+
+goodChoices.forEach((button) => {
+
+    button.onclick = function(){
+
+        reflectionFeedback.innerHTML = `
+
+            <p style="color:green;">
+
+                Wonderful! Supporting folk artists helps preserve
+                India’s cultural heritage for future generations.
+
+            </p>
+
+            <button id="badgeBtn">
+
+                Receive Ambassador Badge
+
+            </button>
+
+        `;
+
+        setTimeout(() => {
+
+            const badgeBtn =
+                document.getElementById(
+                    "badgeBtn"
+                );
+
+            badgeBtn.onclick = function(){
+
+                reflectionScreen.style.display =
+                    "none";
+
+                badgeScreen.style.display =
+                    "block";
+            };
+
+        }, 100);
+    };
+
+});
+
+/* RETHINK CHOICES */
+
+rethinkChoices.forEach((button) => {
+
+    button.onclick = function(){
+
+        reflectionFeedback.innerHTML = `
+
+            <p style="color:#bc4749;">
+
+                Traditional art forms survive when communities actively
+                support artists and share cultural knowledge.
+
+                Try reflecting once more.
+
+            </p>
+
+        `;
+    };
+
+});
